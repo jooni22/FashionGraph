@@ -128,8 +128,8 @@ def classify_contrast(value: float) -> str:
 
 
 def nearest_color_name(rgb: tuple[int, int, int]) -> str:
-    def distance(target: tuple[int, int, int]) -> float:
-        return math.sqrt(sum((component - reference) ** 2 for component, reference in zip(rgb, target)))
+    def distance(palette_rgb: tuple[int, int, int]) -> float:
+        return math.sqrt(sum((component - reference) ** 2 for component, reference in zip(rgb, palette_rgb)))
 
     return min(PALETTE, key=lambda name: distance(PALETTE[name]))
 
@@ -138,8 +138,8 @@ def dominant_colors(image: Image.Image, top_n: int = 3) -> list[str]:
     resized = image.convert("RGB").resize((64, 64))
     raw = resized.tobytes()
     counts: Counter[str] = Counter()
-    for index in range(0, len(raw), 3):
-        rgb = (raw[index], raw[index + 1], raw[index + 2])
+    for red, green, blue in zip(raw[0::3], raw[1::3], raw[2::3]):
+        rgb = (red, green, blue)
         counts[nearest_color_name(rgb)] += 1
     return [name for name, _count in counts.most_common(top_n)]
 
@@ -156,6 +156,11 @@ def analyze_image(path: Path) -> ImageSummary:
         item_code = extract_item_code(stem)
         brightness = round(gray_stats.mean[0], 2)
         contrast = round(gray_stats.stddev[0], 2)
+        average_rgb = (
+            round(rgb_stats.mean[0]),
+            round(rgb_stats.mean[1]),
+            round(rgb_stats.mean[2]),
+        )
 
         return ImageSummary(
             file_name=path.name,
@@ -165,7 +170,7 @@ def analyze_image(path: Path) -> ImageSummary:
             orientation="portrait" if height >= width else "landscape",
             item_code=item_code,
             variant_label=extract_variant_label(stem, item_code),
-            average_rgb=tuple(round(value) for value in rgb_stats.mean),
+            average_rgb=average_rgb,
             brightness=brightness,
             brightness_band=classify_brightness(brightness),
             contrast=contrast,
@@ -351,12 +356,13 @@ def render_svg(graph: dict) -> str:
         x, y = positions[node["id"]]
         width_box = 240 if node["type"] == "image" else 180
         height_box = 92 if node["type"] == "image" else 64
+        labels = multiline_label(node)
         svg_parts.append(
             f'<rect x="{x - width_box / 2}" y="{y - height_box / 2}" width="{width_box}" height="{height_box}" '
             f'rx="18" fill="{node_colors[node["type"]]}" stroke="#1f2933" stroke-width="2" />'
         )
-        for line_index, line in enumerate(multiline_label(node)):
-            text_y = y - (len(multiline_label(node)) - 1) * 12 + line_index * 22
+        for line_index, line in enumerate(labels):
+            text_y = y - (len(labels) - 1) * 12 + line_index * 22
             svg_parts.append(f'<text x="{x}" y="{text_y}" text-anchor="middle" font-size="14">{escape(line)}</text>')
 
     svg_parts.append("</svg>")
@@ -418,7 +424,7 @@ def render_html(graph: dict, svg: str) -> str:
         </tr>
       </thead>
       <tbody>
-        {''.join(rows)}
+        {'\n        '.join(rows)}
       </tbody>
     </table>
   </div>
