@@ -1,0 +1,415 @@
+{
+  "generated_at": "2026-03-11T13:29:08.679275+00:00",
+  "similarity_threshold": 10,
+  "node_count": 13,
+  "edge_count": 31,
+  "nodes": [
+    {
+      "id": "product:OM-COWC-0131",
+      "type": "product",
+      "label": "OM-COWC-0131",
+      "image_count": 4
+    },
+    {
+      "id": "image:ERR-OM-COWC-0131-1.jpg",
+      "type": "image",
+      "label": "ERR-OM-COWC-0131-1.jpg",
+      "item_code": "OM-COWC-0131",
+      "variant_label": "error_sample",
+      "orientation": "portrait",
+      "brightness_band": "bright",
+      "contrast_band": "moderate",
+      "dominant_colors": [
+        "white",
+        "beige",
+        "orange"
+      ],
+      "average_rgb": [
+        224,
+        206,
+        191
+      ],
+      "width": 768,
+      "height": 1344,
+      "aspect_ratio": 0.571
+    },
+    {
+      "id": "image:ERR-OM-COWC-0131-5.jpg",
+      "type": "image",
+      "label": "ERR-OM-COWC-0131-5.jpg",
+      "item_code": "OM-COWC-0131",
+      "variant_label": "error_sample",
+      "orientation": "portrait",
+      "brightness_band": "bright",
+      "contrast_band": "moderate",
+      "dominant_colors": [
+        "white",
+        "beige",
+        "orange"
+      ],
+      "average_rgb": [
+        220,
+        200,
+        181
+      ],
+      "width": 768,
+      "height": 1344,
+      "aspect_ratio": 0.571
+    },
+    {
+      "id": "image:GOOD-OM-COWC-0131.jpg",
+      "type": "image",
+      "label": "GOOD-OM-COWC-0131.jpg",
+      "item_code": "OM-COWC-0131",
+      "variant_label": "good",
+      "orientation": "portrait",
+      "brightness_band": "bright",
+      "contrast_band": "moderate",
+      "dominant_colors": [
+        "white",
+        "beige",
+        "orange"
+      ],
+      "average_rgb": [
+        225,
+        205,
+        187
+      ],
+      "width": 768,
+      "height": 1024,
+      "aspect_ratio": 0.75
+    },
+    {
+      "id": "image:OM-COWC-0131-129402_11.jpg",
+      "type": "image",
+      "label": "OM-COWC-0131-129402_11.jpg",
+      "item_code": "OM-COWC-0131",
+      "variant_label": "129402_11",
+      "orientation": "portrait",
+      "brightness_band": "bright",
+      "contrast_band": "moderate",
+      "dominant_colors": [
+        "white",
+        "beige",
+        "orange"
+      ],
+      "average_rgb": [
+        208,
+        201,
+        199
+      ],
+      "width": 1200,
+      "height": 1600,
+      "aspect_ratio": 0.75
+    },
+    {
+      "id": "brightness:bright",
+      "type": "attribute",
+      "attribute_type": "brightness",
+      "label": "bright"
+    },
+    {
+      "id": "color:beige",
+      "type": "attribute",
+      "attribute_type": "color",
+      "label": "beige"
+    },
+    {
+      "id": "color:white",
+      "type": "attribute",
+      "attribute_type": "color",
+      "label": "white"
+    },
+    {
+      "id": "contrast:moderate",
+      "type": "attribute",
+      "attribute_type": "contrast",
+      "label": "moderate"
+    },
+    {
+      "id": "orientation:portrait",
+      "type": "attribute",
+      "attribute_type": "orientation",
+      "label": "portrait"
+    },
+    {
+      "id": "variant:129402_11",
+      "type": "attribute",
+      "attribute_type": "variant",
+      "label": "129402 11"
+    },
+    {
+      "id": "variant:error_sample",
+      "type": "attribute",
+      "attribute_type": "variant",
+      "label": "error sample"
+    },
+    {
+      "id": "variant:good",
+      "type": "attribute",
+      "attribute_type": "variant",
+      "label": "good"
+    }
+  ],
+  "edges": [
+    {
+      "source": "product:OM-COWC-0131",
+      "target": "image:ERR-OM-COWC-0131-1.jpg",
+      "relation": "has_photo"
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-1.jpg",
+      "target": "orientation:portrait",
+      "relation": "orientation"
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-1.jpg",
+      "target": "brightness:bright",
+      "relation": "brightness"
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-1.jpg",
+      "target": "contrast:moderate",
+      "relation": "contrast"
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-1.jpg",
+      "target": "color:white",
+      "relation": "color"
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-1.jpg",
+      "target": "color:beige",
+      "relation": "color"
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-1.jpg",
+      "target": "variant:error_sample",
+      "relation": "variant"
+    },
+    {
+      "source": "product:OM-COWC-0131",
+      "target": "image:ERR-OM-COWC-0131-5.jpg",
+      "relation": "has_photo"
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-5.jpg",
+      "target": "orientation:portrait",
+      "relation": "orientation"
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-5.jpg",
+      "target": "brightness:bright",
+      "relation": "brightness"
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-5.jpg",
+      "target": "contrast:moderate",
+      "relation": "contrast"
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-5.jpg",
+      "target": "color:white",
+      "relation": "color"
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-5.jpg",
+      "target": "color:beige",
+      "relation": "color"
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-5.jpg",
+      "target": "variant:error_sample",
+      "relation": "variant"
+    },
+    {
+      "source": "product:OM-COWC-0131",
+      "target": "image:GOOD-OM-COWC-0131.jpg",
+      "relation": "has_photo"
+    },
+    {
+      "source": "image:GOOD-OM-COWC-0131.jpg",
+      "target": "orientation:portrait",
+      "relation": "orientation"
+    },
+    {
+      "source": "image:GOOD-OM-COWC-0131.jpg",
+      "target": "brightness:bright",
+      "relation": "brightness"
+    },
+    {
+      "source": "image:GOOD-OM-COWC-0131.jpg",
+      "target": "contrast:moderate",
+      "relation": "contrast"
+    },
+    {
+      "source": "image:GOOD-OM-COWC-0131.jpg",
+      "target": "color:white",
+      "relation": "color"
+    },
+    {
+      "source": "image:GOOD-OM-COWC-0131.jpg",
+      "target": "color:beige",
+      "relation": "color"
+    },
+    {
+      "source": "image:GOOD-OM-COWC-0131.jpg",
+      "target": "variant:good",
+      "relation": "variant"
+    },
+    {
+      "source": "product:OM-COWC-0131",
+      "target": "image:OM-COWC-0131-129402_11.jpg",
+      "relation": "has_photo"
+    },
+    {
+      "source": "image:OM-COWC-0131-129402_11.jpg",
+      "target": "orientation:portrait",
+      "relation": "orientation"
+    },
+    {
+      "source": "image:OM-COWC-0131-129402_11.jpg",
+      "target": "brightness:bright",
+      "relation": "brightness"
+    },
+    {
+      "source": "image:OM-COWC-0131-129402_11.jpg",
+      "target": "contrast:moderate",
+      "relation": "contrast"
+    },
+    {
+      "source": "image:OM-COWC-0131-129402_11.jpg",
+      "target": "color:white",
+      "relation": "color"
+    },
+    {
+      "source": "image:OM-COWC-0131-129402_11.jpg",
+      "target": "color:beige",
+      "relation": "color"
+    },
+    {
+      "source": "image:OM-COWC-0131-129402_11.jpg",
+      "target": "variant:129402_11",
+      "relation": "variant"
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-1.jpg",
+      "target": "image:ERR-OM-COWC-0131-5.jpg",
+      "relation": "visually_similar",
+      "hash_distance": 2,
+      "same_item_code": true
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-1.jpg",
+      "target": "image:GOOD-OM-COWC-0131.jpg",
+      "relation": "visually_similar",
+      "hash_distance": 4,
+      "same_item_code": true
+    },
+    {
+      "source": "image:ERR-OM-COWC-0131-5.jpg",
+      "target": "image:GOOD-OM-COWC-0131.jpg",
+      "relation": "visually_similar",
+      "hash_distance": 2,
+      "same_item_code": true
+    }
+  ],
+  "images": [
+    {
+      "file_name": "ERR-OM-COWC-0131-1.jpg",
+      "width": 768,
+      "height": 1344,
+      "aspect_ratio": 0.571,
+      "orientation": "portrait",
+      "item_code": "OM-COWC-0131",
+      "variant_label": "error_sample",
+      "average_rgb": [
+        224,
+        206,
+        191
+      ],
+      "brightness": 209.86,
+      "brightness_band": "bright",
+      "contrast": 54.94,
+      "contrast_band": "moderate",
+      "dominant_colors": [
+        "white",
+        "beige",
+        "orange"
+      ],
+      "average_hash": "1111111111000011110000111000000110000001100000011100001111111111"
+    },
+    {
+      "file_name": "ERR-OM-COWC-0131-5.jpg",
+      "width": 768,
+      "height": 1344,
+      "aspect_ratio": 0.571,
+      "orientation": "portrait",
+      "item_code": "OM-COWC-0131",
+      "variant_label": "error_sample",
+      "average_rgb": [
+        220,
+        200,
+        181
+      ],
+      "brightness": 203.63,
+      "brightness_band": "bright",
+      "contrast": 54.01,
+      "contrast_band": "moderate",
+      "dominant_colors": [
+        "white",
+        "beige",
+        "orange"
+      ],
+      "average_hash": "1111111111000011100000011000000110000001100000011100001111111111"
+    },
+    {
+      "file_name": "GOOD-OM-COWC-0131.jpg",
+      "width": 768,
+      "height": 1024,
+      "aspect_ratio": 0.75,
+      "orientation": "portrait",
+      "item_code": "OM-COWC-0131",
+      "variant_label": "good",
+      "average_rgb": [
+        225,
+        205,
+        187
+      ],
+      "brightness": 208.98,
+      "brightness_band": "bright",
+      "contrast": 50.46,
+      "contrast_band": "moderate",
+      "dominant_colors": [
+        "white",
+        "beige",
+        "orange"
+      ],
+      "average_hash": "1110011111000011100000011000000110000001100000011100001111111111"
+    },
+    {
+      "file_name": "OM-COWC-0131-129402_11.jpg",
+      "width": 1200,
+      "height": 1600,
+      "aspect_ratio": 0.75,
+      "orientation": "portrait",
+      "item_code": "OM-COWC-0131",
+      "variant_label": "129402_11",
+      "average_rgb": [
+        208,
+        201,
+        199
+      ],
+      "brightness": 202.87,
+      "brightness_band": "bright",
+      "contrast": 48.75,
+      "contrast_band": "moderate",
+      "dominant_colors": [
+        "white",
+        "beige",
+        "orange"
+      ],
+      "average_hash": "1110011111100111110000111100001111000011111001111110001111100111"
+    }
+  ]
+}

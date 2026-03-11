@@ -49,6 +49,28 @@ Therefore to train our model from scratch or predict SG for a fashion image, fol
 - "Image Retrieval Experiments.ipynb" for image retrieval experiment (section IV.c of the paper)
 - "Recall@k experiment.ipynb" for recall@k experiment (Table I, in the paper)
 
+## Analyze the sample photos in `./input/`
+The original paper workflow depends on external RELDN/Fashionpedia model weights and prediction files that are not included in this repository. To make the repository reproducible with the bundled sample images, this repository now includes a lightweight analysis script that reads the photos in `./input/` and creates a graph artifact from the available local data.
+
+1. Install the only required runtime dependency:
+   ```bash
+   python3 -m pip install Pillow
+   ```
+2. Run the analyzer from the repository root:
+   ```bash
+   python3 analyze_input_photos.py
+   ```
+3. Review the generated outputs in `./output/`:
+   - `sample_photo_graph.json` - machine-readable graph with nodes and edges
+   - `sample_photo_graph.svg` - static graph visualization
+   - `sample_photo_graph.html` - browser-friendly report for the analyzed sample photos
+
+The generated graph connects:
+- product/item-code nodes extracted from the file names,
+- image nodes for each sample photo,
+- shared attribute nodes inferred from the image pixels (orientation, brightness, contrast, dominant colors, and variant labels),
+- visual-similarity edges based on perceptual-hash distance between images.
+
 ## To cite us
 Coming soon
 
